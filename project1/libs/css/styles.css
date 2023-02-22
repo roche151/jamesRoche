@@ -1,0 +1,434 @@
+/* Blue Preloader whilst HTML renders */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #fff;
+}
+
+#preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid #f2f2f2;
+    border-top: 6px solid #2A81CB;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: animate-preloader 1s linear infinite;
+            animation: animate-preloader 1s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+    0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+
+@keyframes animate-preloader {
+    0% {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+
+
+/*
+ * Leaflet Map
+ */
+#map {
+    z-index: 0;
+    width: 100%;
+    height: 100vh;
+    /* height: -o-calc(100vh - 56px);
+    height: -webkit-calc(100vh - 56px);
+    height: -moz-calc(100vh - 56px); firefox */
+}
+
+
+/* Country Selector */
+#selCountry {
+    position: absolute;
+    top: 12px;
+    left: 22%;
+    z-index: 500;
+    width: 59%;
+}
+
+
+/* Leaflet Control */
+.leaflet-control-layers-expanded {
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+}
+
+
+/* Popup */
+.leaflet-popup-content-wrapper > div {
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    color: var(--bs-body-color);
+    text-align: center;
+}
+
+.leaflet-popup-content-wrapper div {
+    margin: 10px 16px;
+}
+
+
+/*
+ * Modals
+ */
+.modal-body { padding: 0; }
+
+#infoModal .table,
+#financeModal .table,
+#newsModal .table,
+#covidModal .table  { margin-bottom: 0; }
+
+#infoModal td,
+#financeModal td,
+#newsModal td,
+#covidModal td { vertical-align: middle; }
+
+
+/* 1st col of tables */
+#infoModal td:first-child,
+#financeModal td:first-child,
+#newsModal td:first-child,
+#covidModal td:first-child {
+    width: 86.11px;
+	text-align: center;
+}
+
+
+/* 3rd col of tables */
+#infoModal td + td + td,
+#financeModal td + td + td,
+#covidModal td + td + td {
+    font-weight: 500;
+	text-align: right;
+}
+
+
+/* Info Modal */
+#titleFlag {
+    width: auto;
+    height: 17px;
+    margin-left: 8px;
+    border: 1px solid #dee2e6;
+    cursor: pointer;
+    position: relative;
+    top: 3px;
+}
+
+#infoModal svg { color: #2A81CB; }
+
+/* Covid Modal */
+#covidModal .modal-header { background-color: #fff3cd; }
+
+#covidModal td:first-child { padding-left: 0; }
+
+#covidModal .modal-footer { background-color: #f2e7c3; }
+
+
+/* Weather Modal */
+#weatherModal > div > div { background-color: #476d9a; }
+
+#weatherModal,
+#weatherModal table { color: white; }
+
+#largeWeatherIcon { height: 132px; }
+
+.smallWeatherIcon { height: 59px; }
+
+#currentTemp { font-size: 2.0em; }
+
+#weatherDate { padding-left: 16px; }
+
+.item1 {
+	grid-area: date;
+	text-align: left !important;
+	border-bottom: 1px #dee2e6 solid;
+}
+.item2 {
+	grid-area: bigImg;
+}
+.item3 {
+	grid-area: bigTemp;
+	margin: auto;
+}
+.item4 {
+	grid-area: desc;
+	margin: auto;
+}
+.item5 {
+	grid-area: sDate1;
+	border-top: 1px #dee2e6 solid;
+	border-bottom: 1px #dee2e6 solid;
+}
+.item6 {
+	grid-area: sDate2;
+	border-top: 1px #dee2e6 solid;
+	border-bottom: 1px #dee2e6 solid;
+}
+.item7 {
+	grid-area: sDate3;
+	border-top: 1px #dee2e6 solid;
+	border-bottom: 1px #dee2e6 solid;
+}
+.item8 {
+	grid-area: sDate4;
+	border-top: 1px #dee2e6 solid;
+	border-bottom: 1px #dee2e6 solid;
+}
+.item9 { grid-area: img1; }
+.item10 { grid-area: img2; }
+.item11 { grid-area: img3; }
+.item12 { grid-area: img4; }
+.item13 {
+	grid-area: temp1;
+	/* border-bottom: 1px #dee2e6 solid; */
+	padding-top: 0 !important;
+}
+.item14 {
+	grid-area: temp2;
+	/* border-bottom: 1px #dee2e6 solid; */
+	padding-top: 0 !important;
+}
+.item15 {
+	grid-area: temp3;
+	/* border-bottom: 1px #dee2e6 solid; */
+	padding-top: 0 !important;
+}
+.item16 {
+	grid-area: temp4;
+	/* border-bottom: 1px #dee2e6 solid; */
+	padding-top: 0 !important;
+}
+
+.grid-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-rows: repeat(5, 1fr); */
+  grid-template-areas:
+    'date date date date'
+    'bigImg bigImg bigTemp desc'
+    'sDate1 sDate2 sDate3 sDate4'
+    'img1 img2 img3 img4'
+    'temp1 temp2 temp3 temp4';
+  /* grid-gap: 10px; */
+  padding-bottom: 10px;
+}
+
+.grid-container div {
+  text-align: center;
+  padding: 5px 0;
+}
+
+
+/* Finacial Modal */
+#financeModal .modal-header { background-color: #d1e7dd; }
+
+#selCurrency {
+    width: 30%;
+    margin-left: auto;
+}
+
+
+/* News Modal */
+#newsModal .modal-header { background-color: #cff4fc; }
+
+#selCategory {
+    width: 47%;
+    margin-left: 1%;
+}
+
+#selLimit {  width: 67px; }
+
+.fa-long-arrow-alt-right {
+    font-size: 1.8em;
+    color: #475058;
+}
+
+.fa-long-arrow-alt-right:hover { color: black; }
+
+
+/* Flag Modal */
+#flagModal .modal-content {
+    width: auto !important;
+    margin: 0 auto;
+}
+
+
+/*
+ * Buttons
+ */
+
+.leaflet-bottom.leaflet-left div div:nth-child(1) { margin-bottom: 1px; }
+
+
+/* my location easy */
+.leaflet-top.leaflet-left div:nth-child(2) span {
+	padding: 0;
+	font-size: 2.0em;
+    position: relative;
+    right: 4px;
+    top: 1px;
+}
+
+
+/* random easy */
+.leaflet-top.leaflet-left div:nth-child(3) span {
+	padding: 0;
+	font-size: 2.0em;
+    color: #9C2BCB;
+    position: relative;
+    right: 3px;
+    top: 1px;
+}
+
+
+/* info easy */
+.leaflet-top.leaflet-left div:nth-child(4) span {
+	padding: 0;
+	font-size: 2.0em;
+    color: #2A81CB;
+}
+
+
+/* weather easy */
+.leaflet-top.leaflet-left div:nth-child(5) span {
+	padding: 0;
+	font-size: 2.0em;
+    color: #daaf06;
+    position: relative;
+    right: 3px;
+    top: 1px;
+}
+
+
+/* dollar easy */
+.leaflet-top.leaflet-left div:nth-child(6) span {
+	padding: 0;
+	font-size: 2.0em;
+    color: #2AAD27;
+}
+
+
+/* flag easy */
+.leaflet-top.leaflet-left div:nth-child(7) span {
+	padding: 0;
+	font-size: 2.0em;
+    color: orangered;
+    position: relative;
+    right: 3px;
+}
+
+
+/* anthem easy */
+.leaflet-top.leaflet-left div:nth-child(8) span {
+	padding: 0;
+	font-size: 2.0em;
+    color: #be2596;
+    position: relative;
+    right: 4px;
+}
+
+
+/* news easy */
+.leaflet-top.leaflet-left div:nth-child(9) span {
+	padding: 0;
+	font-size: 2.0em;
+    color: black;
+    position: relative;
+    right: 4px;
+}
+
+
+/* covid easy */
+.leaflet-top.leaflet-left div:nth-child(10) span {
+	padding: 0;
+	font-size: 2.0em;
+    color: #49be25;
+    position: relative;
+    right: 3px;
+}
+
+/* Map Markers */
+.POIs,
+.POIs div {
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    color: white;
+    background-color: #2A81CB;
+}
+
+.webcams,
+.webcams div {
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    color: white;
+    background-color: #EC7A18;
+}
+
+.fa-plane {
+    position: relative;
+    left: 1px;
+    top: 1px;
+}
+
+.fa-futbol {
+    position: relative;
+    left: 1px;
+}
+
+.fa-monument {
+    position: relative;
+    left: 1px;
+}
+
+.fa-city {
+    position: relative;
+    left: 1px;
+}
+
+.fa-video {
+    position: relative;
+    left: 1px;
+}
+
+.fa-tree {
+    position: relative;
+    left: 1px;
+    top: 1px;
+}
+
+.leaflet-right > div {
+    position: relative;
+    top: 49px;
+}
+
+#miniWebcamFrame {
+    width: 201px;
+    height: auto;
+    padding: 0;
+    margin: 0;
+}

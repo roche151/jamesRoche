@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "leaflet-easybutton": "^2.4.0"
+  }
+}
